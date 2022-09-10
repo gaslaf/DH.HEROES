@@ -5,7 +5,7 @@ const path = require('path');
 
 
 app.listen(3000, () => console.log('server running'));
-
+app.use(express.static('DH.HEROES'))
 app.get('/', (req,res) => {
     res.send('raiz');
 })
@@ -16,7 +16,7 @@ app.get('/berners-lee',(req,res) => {
     res.sendFile(path.join(__dirname,'./DH.HEROES/views/berners-lee.html'))
 })
 app.get('/clarke',(req,res) => {
-    res.send('clarke');
+    res.sendFile(path.join(__dirname,'./DH.HEROES/views/clarke'))
 })
 app.get('/hamilton',(req,res) => {
     res.send('hamilton');
